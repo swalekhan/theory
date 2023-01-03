@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// Write a function and use 'call' to call the function
+
+
+function print(){
+
+    return "hello";
+
+}
+
+console.log(print.call());
+
+
+
+// Write a program using apply
+
+
+let obj = {
+
+    a:5
+
+}
+
+function print(b,c){
+
+    return this.a + b + c;
+
+}
+
+console.log(print.apply(obj,[1,2]))
+
+
+
+// Write a program using bind
+
+
+let obj = {
+
+    a:5
+
+}
+
+function print(b,c){
+
+    return this.a + b + c;
+
+}
+
+let ans = print.bind(obj);
+
+console.log(ans(1,2))
+
+// Create a new object called Student with age 20 , write a function which prints the age of the student from the student object.
+
+
+let student = {
+
+    age:20
+
+}
+
+function print(){
+
+    console.log(this.age)
+
+}
+
+let ans = print.bind(student);
+
+ans()
+
+
+
+
+
+// Write down the code like the way the youtuber does
+
+
+// function curry  using find method;
+
+function print(b,c){
+
+    console.log(b+c)
+
+}
+
+let ans = print.bind(this, 2);
+
+ans(1)
+
+let ans1 = print.bind(this, 2);
+
+ans1(4)
+
+// function curry  using closure method;
+
+function print(a){
+
+    return function(b){
+
+        console.log(a + b);
+
+    }
+
+}
+
+let ans  = print(2);
+
+ans(1)
+
+
+</script>
+</html>
